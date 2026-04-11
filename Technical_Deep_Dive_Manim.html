@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Deep Dive: Manim Engineering - Davi Alves</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #333; line-height: 1.7; margin: 0; padding: 0; background-color: #f8f9fa; }
+        .container { max-width: 900px; margin: 0 auto; padding: 3rem; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
+        h1 { font-size: 2.5rem; color: #1a1a1a; border-bottom: 4px solid #00e5ff; display: inline-block; padding-bottom: 10px; margin-bottom: 2rem; }
+        h2 { font-size: 1.8rem; color: #333; margin-top: 3rem; border-left: 5px solid #00e5ff; padding-left: 15px; }
+        h3 { font-size: 1.4rem; color: #444; margin-top: 2rem; }
+        p { margin-bottom: 1.5rem; text-align: justify; }
+        .code-block { background: #1e1e1e; color: #d4d4d4; padding: 1.5rem; border-radius: 8px; font-family: 'Fira Code', monospace; font-size: 0.9rem; overflow-x: auto; margin: 1.5rem 0; }
+        .highlight { background: #e0fbff; padding: 1.5rem; border-radius: 8px; border-left: 5px solid #00e5ff; margin: 2rem 0; }
+        .footer { margin-top: 5rem; text-align: center; color: #888; font-size: 0.9rem; border-top: 1px solid #eee; padding-top: 2rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Technical Deep Dive: Manim & Python Engineering</h1>
+        <p>This document provides a technical breakdown of the programmatic animation infrastructure developed by **Davi Alves**. It covers the algorithmic logic, mathematical modeling, and XAI (Explainable AI) principles used across the 13-part authority portfolio.</p>
+
+        <h2>I. The Core Architecture: Procedural Animation</h2>
+        <p>Unlike traditional keyframe-based animation, these visualizations are generated through **Procedural Logic** using the Manim Community engine. This allows for absolute mathematical precision in representing data flows and stochastic models.</p>
+        
+        <div class="code-block">
+# Example: Chaos Diffusion Logic snippet
+class ChaosComparison(Scene):
+    def construct(self):
+        # Rogers Model (S-Curve) vs. Reality (Stochastic Noise)
+        rogers = ParametricFunction(lambda t: np.array([t, 1/(1+np.exp(-t)), 0]), t_range=[-5, 5])
+        reality = always_redraw(lambda: rogers.copy().set_stroke(opacity=0.5).add_noise(0.2))
+        self.play(Create(rogers), Create(reality))
+        </div>
+        <p>The use of `always_redraw` and `UpdatingManager` ensure that the visual entropy markers respond to the underlying mathematical parameters in real-time during the render process.</p>
+
+        <h2>II. Stochastic Reality vs. Rogers Diffusion</h2>
+        <p>In the **Chaos Diffusion** project, we specifically addressed the "Expectation Gap" in business modeling. While the traditional Rogers Innovation Curve is a clean S-curve, market reality is chaotic. We modeled this using a custom stochastic jitter kernel that simulates market friction, user churn, and unexpected network noise.</p>
+
+        <h2>III. RWA Tokenization & Fractioning Logic</h2>
+        <p>For the **Real-World Asset (RWA)** visualizations, we developed a system of geometric decomposition. This demonstrates the "Mathematics of Trust"—literally showing the structural breakdown of a physical asset (a commercial building) into liquid digital tokens while maintaining a continuous link to the underlying collateral value.</p>
+
+        <h2>IV. Explainable AI (XAI) Visualizations</h2>
+        <p>In the **Transformer Attention** and **Latent Space PCA** deep dives, the goal was to make abstract data architectures intelligible. 
+        <ul>
+            <li><strong>Transformer Attention:</strong> Visualizing high-dimensional softmax weights in a nodal network.</li>
+            <li><strong>Latent Space PCA:</strong> Projecting high-dimensional facial vectors into a steerable 2D plane for user visualization.</li>
+        </ul>
+        </p>
+
+        <div class="footer">
+            Davi Alves | Technical Motion & AI Infrastructure | © 2026
+        </div>
+    </div>
+</body>
+</html>

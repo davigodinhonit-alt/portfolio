@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davi Alves - Industrializing Authority through Technical Visualization</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&family=JetBrains+Mono&display=swap');
+        
+        :root { --bg: #050608; --card: rgba(255, 255, 255, 0.03); --neon: #00e5ff; --text: #e0e0e0; --accent: #1a237e; }
+        
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+        
+        /* Header & Bio Section */
+        .profile-header { 
+            padding: 100px 20px 60px; 
+            text-align: center; 
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(55, 118, 171, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 212, 59, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, #050608 0%, #0a0d14 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .profile-header::before {
+            content: "def construct(self):\n    self.play(Create(network))";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: var(--neon);
+            opacity: 0.1;
+            white-space: pre;
+            text-align: left;
+        }
+        .profile-img { 
+            width: 320px; 
+            height: 320px; 
+            border-radius: 50%; 
+            border: 3px solid var(--neon); 
+            object-fit: cover; 
+            box-shadow: 0 0 60px rgba(0, 229, 255, 0.3); 
+            margin-bottom: 2rem; 
+            position: relative; 
+            z-index: 2; 
+        }
+        h1 { font-size: 3.5rem; margin: 0; letter-spacing: -2px; font-weight: 800; color: #fff; position: relative; z-index: 2; }
+        .tagline { color: var(--neon); text-transform: uppercase; letter-spacing: 5px; font-size: 1rem; margin: 15px 0 30px; font-weight: 300; position: relative; z-index: 2; }
+        
+        .about-section { max-width: 850px; margin: 0 auto 60px; text-align: left; background: var(--card); padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(20px); }
+        .about-section h2 { font-size: 1.2rem; color: var(--neon); margin-top: 0; text-transform: uppercase; letter-spacing: 2px; }
+        .about-section p { font-size: 1.1rem; line-height: 1.8; color: #bbb; }
+        
+        .linkedin-btn { display: inline-block; padding: 12px 30px; background: var(--neon); color: #000; text-decoration: none; font-weight: 700; border-radius: 50px; margin-top: 20px; transition: all 0.3s ease; }
+        .linkedin-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px var(--neon); }
+
+        /* Grid System */
+        .container { max-width: 1400px; margin: 0 auto 100px; padding: 0 30px; }
+        .section-title { margin: 80px 0 40px; font-size: 2rem; color: #fff; border-left: 5px solid var(--neon); padding-left: 20px; font-weight: 800; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 40px; }
+        
+        /* Video Cards */
+        .card { background: var(--card); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; padding: 25px; transition: all 0.4s ease; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-10px) scale(1.02); border-color: var(--neon); background: rgba(255,255,255,0.07); }
+        
+        .video-box { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); aspect-ratio: 1/1; background: #000; }
+        video { width: 100%; height: 100%; object-fit: cover; display: block; }
+        
+        h3 { font-size: 1.3rem; margin: 0 0 12px; color: #fff; }
+        .description { font-size: 0.9rem; line-height: 1.6; color: #aaa; flex-grow: 1; }
+        .tech-tags { margin-top: 20px; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--neon); opacity: 0.7; }
+
+        footer { text-align: center; padding: 60px; color: #444; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05); }
+    </style>
+</head>
+<body>
+
+    <header class="profile-header">
+        <img src="profile_suit.jpg" alt="Davi Alves" class="profile-img">
+        <h1>DAVI ALVES</h1>
+        <p class="tagline">Technical Motion & AI Media Engineer</p>
+        
+        <div class="about-section">
+            <h2>About / Technical Profile</h2>
+            <p>
+                As an experienced engineer, I've come to realize that automation and technical expertise alone aren't enough—authority is built by making complex systems visible. <strong>I specialize in translating high-level engineering and mathematical concepts into premium visual narratives.</strong> <br><br>
+                Through procedural animation (Manim/Python) and nodal AI workflows (ComfyUI/Wan), I create digital twin visualizations of market dynamics, institutional finance frameworks, and autonomous agent orchestration. My goal is to bridge the gap between technical depth and executive clarity.
+            </p>
+            <a href="https://www.linkedin.com/in/davi-alves-ab930a181" target="_blank" class="linkedin-btn">CONNECT ON LINKEDIN</a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- SYNTHETIC MEDIA SECTION -->
+        <h2 class="section-title">Synthetic Identity & AI Media Engineering</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="video-box"><video src="assets/videos/15_Synthetic_Media_Avatar.mp4" controls loop></video></div>
+                <h3>AI Virtual Human: Synthetic Identity Showcase</h3>
+                <p class="description">A high-fidelity AI human demonstration created using specialized nodal pipelines. This case showcases the industrialization of synthetic avatars, enabling scalable, AI-driven digital personalities for global enterprises.</p>
+                <div class="tech-tags">#Wan2.2 #ComfyUI #SyntheticIdentity #VirtualHumans</div>
+            </div>
+            <div class="card">
+                <div class="video-box"><video src="assets/videos/14_Determinant_Logic.mp4" controls loop></video></div>
+                <h3>Technical Infrastructure: Geometric Logic</h3>
+                <p class="description">Mapping the internal logic of complex technical systems. This visualization explores the area scaling factor of linear transformations, essential for cryptographic security and engine performance.</p>
+                <div class="tech-tags">#AIOps #Mathematical_Logic #Infrastructure</div>
+            </div>
+        </div>
+
+        <!-- COGNITIVE ORCHESTRATION -->
+        <h2 class="section-title">Cognitive Orchestration & AI Infrastructure</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="video-box"><video src="assets/videos/04_Agentic_Orchestration.mp4" controls loop></video></div>
+                <h3>Agentic Logic Hub</h3>
+                <p class="description">Visual orchestration of multi-agent autonomous systems. Exploring the recursive communication protocols between AI kernels in a high-load enterprise environment.</p>
+                <div class="tech-tags">#Multi-Agent_Systems #XAI #Python_Orchestration</div>
+            </div>
+            <div class="card">
+                <div class="video-box"><video src="assets/videos/13_Infrastructure_GPU_Parallelism.mp4" controls loop></video></div>
+                <h3>GPU Parallelism & Computational Scaling</h3>
+                <p class="description">Contrasting CPU sequential processing with massive CUDA parallelism. A critical visualization for understanding high-frequency synthetic media generation.</p>
+                <div class="tech-tags">#CUDA_Cores #Infrastructure_Scaling #Hardware_Logic</div>
+            </div>
+            <div class="card">
+                <div class="video-box"><video src="assets/videos/07_AI_Transformer_Attention.mp4" controls loop></video></div>
+                <h3>Mathematical Focus: Self-Attention</h3>
+                <p class="description">Deconstructing the Transformer architecture. Demonstrating how attention weights are dynamically assigned across high-dimensional vector nodes.</p>
+                <div class="tech-tags">#LLM_Engineering #Attention_Mechanism #Vector_Spaces</div>
+            </div>
+            <div class="card">
+                <div class="video-box"><video src="assets/videos/12_AI_Latent_Space_PCA.mp4" controls loop></video></div>
+                <h3>Distilling Intelligence: Latent Space & PCA</h3>
+                <p class="description">AI dimensionality reduction through Principal Component Analysis. Visualizing how high-dimensional vectors are projected into human-legible insights.</p>
+                <div class="tech-tags">#DataScience #MachineLearning #PCA</div>
+            </div>
+        </div>
+
+        <!-- FINANCIAL & RWA -->
+        <h2 class="section-title">Institutional Finance & RWA Architecture</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="video-box"><video src="assets/videos/02_RWA_Institutional_Masterclass.mp4" controls loop></video></div>
+                <h3>RWA Institutional Masterclass</h3>
+                <p class="description">Asset tokenization of $50M commercial real estate. Decomposition into digital units following ERC-3643 (T-Rex) standards for on-chain liquidity.</p>
+                <div class="tech-tags">#RWA_Tokenization #ERC-3643 #Blockchain_Finance</div>
+            </div>
+            <div class="card">
+                <div class="video-box"><video src="assets/videos/05_RWA_Fractioning.mp4" controls loop></video></div>
+                <h3>Granular Liquidity: RWA Fractioning</h3>
+                <p class="description">The math of programmable ownership. Visualizing the split of institutional assets into liquid, legally-compliant digital shares.</p>
+                <div class="tech-tags">#Web3_Finance #Token_Logic #DeFi_Infrastructure</div>
+            </div>
+            <div class="card">
+                <div class="video-box"><video src="assets/videos/08_Web3_Proof_of_Reserves.mp4" controls loop></video></div>
+                <h3>Trust by Design: Proof of Reserves</h3>
+                <p class="description">Cryptographic verification between physical vaults and on-chain ledgers. A visual case for institutional transparency and decentralized security.</p>
+                <div class="tech-tags">#Cryptography #Security #Blockchain_Trust</div>
+            </div>
+            <div class="card">
+                <div class="video-box"><video src="assets/videos/14_Determinant_Logic.mp4" controls loop></video></div>
+                <h3>Geometric Trust: Understanding Determinants</h3>
+                <p class="description">Visualizing the area scaling factor of linear transformations. This animation explains the fundamental geometry behind secure cryptographic matrices.</p>
+                <div class="tech-tags">#LinearAlgebra #Cryptography #Engine_Logic</div>
+            </div>
+        </div>
+
+        <!-- PERFORMANCE STRATEGY -->
+        <h2 class="section-title">Platform Strategy & Performance Metrics</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="video-box"><video src="assets/videos/06_SaaS_Rule_of_40.mp4" controls loop></video></div>
+                <h3>SaaS Efficiency: The Rule of 40</h3>
+                <p class="description">Balancing growth and EBITDA margin. Defining the golden ratio of sustainable scaling for top-tier Venture Capital standards.</p>
+                <div class="tech-tags">#VC_Benchmarks #SaaS_Economics #Scaling_Logic</div>
+            </div>
+            <div class="card">
+                <div class="video-box"><video src="assets/videos/10_SaaS_Churn_vs_Expansion.mp4" controls loop></video></div>
+                <h3>NRR Dynamics: Churn vs. Expansion</h3>
+                <p class="description">The leaky bucket problem. Visualizing how expansion revenue outpaces churn for exponential SaaS compounding.</p>
+                <div class="tech-tags">#SaaS #NRR #GrowthMetrics</div>
+            </div>
+            <div class="card">
+                <div class="video-box"><video src="assets/videos/11_Strategy_Network_Effects.mp4" controls loop></video></div>
+                <h3>Exponential Moats: Network Effects</h3>
+                <p class="description">Metcalfe's Law in action. Modeling how platform value scales as the square of connected nodes, creating mathematical moats.</p>
+                <div class="tech-tags">#Platform_Economics #Metcalfe_Law #Network_Strategy</div>
+            </div>
+            <div class="card">
+                <div class="video-box"><video src="assets/videos/16_Rogers_Adoption_Curve.mp4" controls loop></video></div>
+                <h3>The Rogers Adoption Curve: Market Logic</h3>
+                <p class="description">Market adoption is not a random process. This visualization models the Rogers S-Curve, demonstrating how tech products move from Innovators to the Early Majority, and how market friction impacts the diffusion of innovation.</p>
+                <div class="tech-tags">#MarketStrategy #RogersCurve #TechAdoption #DiffusionOfInnovation</div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        DAVI ALVES | TECHNICAL AUTHORITY HUB 2026 | ALL RIGHTS RESERVED
+    </footer>
+</body>
+</html>
+

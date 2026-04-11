@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Deep Dive: Synthetic Media Workflows - Davi Alves</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #333; line-height: 1.7; margin: 0; padding: 0; background-color: #f8f9fa; }
+        .container { max-width: 900px; margin: 0 auto; padding: 3rem; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
+        h1 { font-size: 2.5rem; color: #1a1a1a; border-bottom: 4px solid #a29bfe; display: inline-block; padding-bottom: 10px; margin-bottom: 2rem; }
+        h2 { font-size: 1.8rem; color: #333; margin-top: 3rem; border-left: 5px solid #a29bfe; padding-left: 15px; }
+        p { margin-bottom: 1.5rem; text-align: justify; }
+        .highlight { background: #f3f0ff; padding: 1.5rem; border-radius: 8px; border-left: 5px solid #a29bfe; margin: 2rem 0; }
+        .node-desc { border: 1px solid #eee; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; }
+        .footer { margin-top: 5rem; text-align: center; color: #888; font-size: 0.9rem; border-top: 1px solid #eee; padding-top: 2rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Technical Deep Dive: Synthetic Media & Identity Pipelines</h1>
+        <p>This document outlines the **Synthetic Media Orchestration** developed by Davi Alves, focusing on high-fidelity video synthesis and identity governance using **ComfyUI** and the **Wan-Video (Wan 2.2)** architecture.</p>
+
+        <h2>I. Nodal Orchestration: The ComfyUI Pipeline</h2>
+        <p>Unlike traditional AI generation, our pipeline is based on a modular nodal system. This allows for precise control over the denoising process, temporal consistency, and biometric identity preservation.</p>
+        
+        <div class="node-desc">
+            <strong>Key Nodal Logic:</strong>
+            <ul>
+                <li><strong>ControlNet Canny/Depth:</strong> Used to maintain the structural integrity of the human subject during synthesis.</li>
+                <li><strong>Temporal Consistency Kernels:</strong> Implementing an iterative loop that ensures frame-to-frame micro-consistency, eliminating the "jitters" common in standard AI video.</li>
+            </ul>
+        </div>
+
+        <h2>II. Case Study: Character Replacement & Identity Governance</h2>
+        <p>Using the **Wan 2.2 model**, we developed a system for seamless character replacement. This is not just a faceswap; it is a full gestural re-mapping. We decouple the movement vectors of a source video from the latent identity of a target celebrity or executive double.</p>
+        
+        <div class="highlight">
+            "Identity Governance is the cornerstone of corporate synthetic media. Our pipelines ensure that the 'Digital Double' can only be activated through verified biometric trust layers, preventing unauthorized use of executive identity."
+        </div>
+
+        <h2>III. Future Scaling: Real-Time Synthetic Localization</h2>
+        <p>We are currently moving toward **Real-Time Synthesis**, where a leader can deliver a speech in English and the pipeline generates a localized digital double in 15 different languages with synchronized micro-gestures. This is the ultimate "Carisma Industrialization."</p>
+
+        <div class="footer">
+            Davi Alves | AI Media Engineer | © 2026
+        </div>
+    </div>
+</body>
+</html>
