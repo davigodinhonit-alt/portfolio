@@ -136,6 +136,23 @@ button.on .th img,button:hover .th img{opacity:1}
   .cine .dots{position:relative;left:auto;right:auto;bottom:auto;padding:18px var(--pad) 4px}
   .cine .dots button{flex-basis:110px}
 }
+/* motion: animações de rolagem */
+.sx{padding:clamp(56px,8vh,90px) var(--pad) 0}
+.sx-h{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:24px}
+.sx-h h3{font-size:clamp(20px,1.8vw,28px);font-weight:600;letter-spacing:-.02em}
+.sx-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,1.6vw,24px)}
+.sx-c{display:block}
+.sx-v{position:relative;aspect-ratio:16/10;border-radius:8px;overflow:hidden;background:#0d0d0f;box-shadow:0 0 0 1px var(--line)}
+.sx-v img,.sx-v video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sx-v video{opacity:0;transition:opacity .35s}.sx-v video.on{opacity:1}
+.sx-tag{position:absolute;left:12px;top:12px;font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;background:rgba(9,9,10,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:6px 10px;border-radius:4px;transition:opacity .3s}
+.sx-c:hover .sx-tag{opacity:0}
+.sx-cap{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-top:14px}
+.sx-cap b{display:block;font-size:clamp(17px,1.4vw,21px);font-weight:600;letter-spacing:-.01em}
+.sx-cap .meta{display:block;margin-top:3px}
+.sx-c .go{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);white-space:nowrap}
+.sx-c:hover .go{color:var(--accent)}
+@media (max-width:760px){.sx-g{grid-template-columns:minmax(0,1fr)}.sx-h{flex-direction:column;gap:6px}}
 /* reels */
 .reels{padding-left:0;padding-right:0}
 .reels .sec-t{margin-left:var(--pad);margin-right:var(--pad)}
@@ -289,6 +306,15 @@ footer{border-top:1px solid var(--line);padding:24px var(--pad);display:flex;jus
     <div class="rc" data-v="aurum"><div class="rb"><img src="assets/reels/p-aurum.jpg" alt="" loading="lazy"><video muted playsinline loop preload="none" data-src="assets/reels/p-aurum.mp4"></video><span class="snd">▶ Sound</span></div><h4>Winter collection</h4><small>Aurum · Dublin</small></div>
   </div>
   <div class="strip-ft"><span>8 videos · drag sideways</span><div><button data-d="-1">← Prev</button><button data-d="1">Next →</button></div></div>
+  <div class="sx">
+    <div class="sx-h rv"><h3>Scroll animations</h3><span class="meta">Written in code for NAB Creative</span></div>
+    <div class="sx-g">
+      <a class="sx-c rv" href="https://nab-creative.vercel.app/marmorarias" target="_blank" rel="noopener"><div class="sx-v"><img src="assets/motion/chapa.jpg" alt="" loading="lazy"><video muted loop playsinline preload="none" data-src="assets/motion/chapa.mp4"></video><span class="sx-tag">▶ Scroll-driven</span></div>
+        <div class="sx-cap"><div><b>From phone photo to client</b><span class="meta">Stone slab · before and after</span></div><span class="go">See it live ↗</span></div></a>
+      <a class="sx-c rv" href="https://nab-creative.vercel.app/" target="_blank" rel="noopener"><div class="sx-v"><img src="assets/motion/edicao.jpg" alt="" loading="lazy"><video muted loop playsinline preload="none" data-src="assets/motion/edicao.mp4"></video><span class="sx-tag">▶ Scroll-driven</span></div>
+        <div class="sx-cap"><div><b>From raw footage to post</b><span class="meta">Editing desk · cut, grade, export</span></div><span class="go">See it live ↗</span></div></a>
+    </div>
+  </div>
 </section>
 
 <section class="sys" id="systems">
@@ -616,6 +642,13 @@ const CRAFT = [["Fourier series", "Signals", "fourier", "Every signal is just sp
     else { v.pause(); if (prog) prog.pause(); }
   }), { threshold: .35 }).observe(v);
   v.loop = true;
+})();
+/* ===== motion: animações de rolagem (uma por vez) ===== */
+(function () {
+  const cs = [...document.querySelectorAll('.sx-c')]; if (!cs.length) return;
+  const play = c => { cs.forEach(x => { const v = x.querySelector('video'); if (x === c) { if (!v.src) v.src = v.dataset.src; v.currentTime = 0; v.play().then(() => v.classList.add('on')).catch(() => {}); } else { v.pause(); v.classList.remove('on'); } }); };
+  if (matchMedia('(hover:hover)').matches) cs.forEach(c => { c.addEventListener('mouseenter', () => play(c)); c.addEventListener('mouseleave', () => { const v = c.querySelector('video'); v.pause(); v.classList.remove('on'); }); });
+  else new IntersectionObserver(es => es.forEach(e => { const v = e.target.querySelector('video'); if (e.intersectionRatio > .6) play(e.target); else { v.pause(); v.classList.remove('on'); } }), { threshold: [0, .6, 1] }).observe ? cs.forEach(c => new IntersectionObserver(es => es.forEach(e => { const v = c.querySelector('video'); if (e.intersectionRatio > .6) play(c); else { v.pause(); v.classList.remove('on'); } }), { threshold: [0, .6] }).observe(c)) : 0;
 })();
 /* ================= resto da página ================= */
 const nav = $('#nav');
